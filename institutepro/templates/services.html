@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nth %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">All Course Details Here!!!</h3>
+      <table class="table table-bordered mt-2 table-hover">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th>Course no</th>
+            <th>Course Name</th>
+            <th>Course_Fee</th>
+            <th>Course Date</th>
+            <th>Course Time</th>
+            <th>Duration</th>
+            <th>Trainer</th>
+            <th>Experince</th>
+          </tr>
+          <tbody>
+            {% for i in Data %}
+            <tr>
+              <td>{{ i.course_no }}</td>
+              <td>{{ i.course_name }}</td>
+              <td>{{ i.course_fee }}</td>
+              <td>{{ i.course_date }}</td>
+              <td>{{ i.course_time }}</td>
+              <td>{{ i.duration }}</td>
+              <td>{{ i.trainer }}</td>
+              <td>{{ i.experience }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt-2">
+<img src="{% static 'images/online vs offline.jpeg' %}" alt="image" height="100%" width="100%">
+</div>
+{% endblock %}
